@@ -1,3 +1,7 @@
+package Users;
+
+import Users.User;
+
 import java.util.List;
 
 public class SearchUser {

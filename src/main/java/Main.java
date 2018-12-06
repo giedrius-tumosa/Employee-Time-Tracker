@@ -1,6 +1,9 @@
+import Users.SearchUser;
+import Users.TimeCount;
+import Users.User;
+
 import java.time.LocalDateTime;
 import java.util.*;
-import java.time.Instant;
 
 public class Main {
 
@@ -15,7 +18,6 @@ public class Main {
         users.add(new User("Haris", "Poteris", "0006"));
         users.add(new User("Steve", "Rodgers", "0007"));
 
-
         System.out.println("Enter the user ID number: ");
         Scanner insert = new Scanner(System.in);
         String userId = insert.next();
@@ -24,9 +26,19 @@ public class Main {
         SearchUser s = new SearchUser();
         String vardas = s.search(userId, users).getName();
         String pavarde = s.search(userId, users).getSurname();
-        String timeOfLog = timestamp1.getHour() + "h " + timestamp1.getMinute() + "min " + timestamp1.getSecond() + "s";
 
+
+        String timeOfLog = timestamp1.getHour() + "h " + timestamp1.getMinute() + "min " + timestamp1.getSecond() + "s";
         System.out.println("The user is " + vardas + " " + pavarde + ". " + "Time of log: " + timeOfLog);
+
+        TimeCount time = new TimeCount();
+        time.arLaiku(timestamp1);
+
+
+
+
+
+
 
         }
     }

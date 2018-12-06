@@ -1,3 +1,5 @@
+package Users;
+
 import java.sql.Time;
 
 public class User {
@@ -5,6 +7,7 @@ public class User {
     private String name;
     private String surname;
     private String userId;
+
 
 
 
