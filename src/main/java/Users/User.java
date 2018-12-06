@@ -1,6 +1,5 @@
 package Users;
 
-import java.sql.Time;
 
 public class User {
 
@@ -8,8 +7,9 @@ public class User {
     private String surname;
     private String userId;
 
+    public User() {
 
-
+    }
 
     public User(String name, String surname, String userId) {
 

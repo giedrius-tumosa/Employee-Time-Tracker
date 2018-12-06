@@ -29,16 +29,10 @@ public class Main {
 
 
         String timeOfLog = timestamp1.getHour() + "h " + timestamp1.getMinute() + "min " + timestamp1.getSecond() + "s";
-        System.out.println("The user is " + vardas + " " + pavarde + ". " + "Time of log: " + timeOfLog);
+        System.out.println("The user is " + vardas + " " + pavarde + ". " + "Time of log: " + timeOfLog + ".");
 
         TimeCount time = new TimeCount();
         time.arLaiku(timestamp1);
-
-
-
-
-
-
 
         }
     }
