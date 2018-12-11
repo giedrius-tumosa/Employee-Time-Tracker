@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 public class TimeCount {
 
-    LocalDateTime pamainosPradzia = LocalDateTime.of(2018, 12, 6, 16, 0, 0);
+    LocalDateTime pamainosPradzia = LocalDateTime.of(2018, 12, 7, 16, 0, 0);
 
 
     public void  arLaiku(LocalDateTime timestamp1) {

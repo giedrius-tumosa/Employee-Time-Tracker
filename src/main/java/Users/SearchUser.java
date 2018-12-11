@@ -1,10 +1,10 @@
 package Users;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Scanner;
+import DataProvider.User;
 
-public class SearchUser extends User{
+import java.util.List;
+
+public class SearchUser extends User {
 
     public User search (String userID, List<User> users){
 
