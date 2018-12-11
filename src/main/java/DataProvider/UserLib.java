@@ -4,6 +4,7 @@ import DataProvider.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class UserLib {
 
@@ -30,7 +31,9 @@ public class UserLib {
         return null;
     }
 
+    public List<User> users () {
+        return users;
 
 
 
-}
+}}
