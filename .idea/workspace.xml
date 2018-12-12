@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81844839-0604-4709-a1f0-5d95f362da56" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Attendance/AttendanceChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataProvider/AttendanceChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataProvider/AttendanceChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataProvider/AttendanceChecker.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DataProvider/EventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataProvider/EventData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DataProvider/Gates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataProvider/Gates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataProvider/UserEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataProvider/UserEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataProvider/UserLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataProvider/UserLib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Users/SearchUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -60,28 +56,28 @@
     <session id="1513247025">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.0" value="6" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="5381" />
+          <entry key="java" value="7331" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5381" />
+          <entry key="JAVA" value="7331" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -130,7 +126,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DataProvider/UserEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
+            <state relative-caret-position="368">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -142,8 +138,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DataProvider/EventData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="414">
+              <caret line="21" column="81" selection-start-line="21" selection-start-column="81" selection-end-line="21" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,10 +148,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DataProvider/AttendanceChecker.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Attendance/AttendanceChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
-              <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+            <state relative-caret-position="198">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,8 +162,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DataProvider/Gates.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="314">
+              <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -214,9 +210,10 @@
         <option value="$PROJECT_DIR$/src/main/java/DataProvider/Logger.java" />
         <option value="$PROJECT_DIR$/src/main/java/DataProvider/UserLib.java" />
         <option value="$PROJECT_DIR$/src/main/java/DataProvider/UserEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DataProvider/EventData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DataProvider/Gates.java" />
         <option value="$PROJECT_DIR$/src/main/java/DataProvider/AttendanceChecker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DataProvider/Gates.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DataProvider/EventData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Attendance/AttendanceChecker.java" />
       </list>
     </option>
   </component>
@@ -236,7 +233,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="889" />
     <option name="y" value="67" />
     <option name="width" value="945" />
@@ -248,8 +245,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -286,6 +283,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Attendance" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Employee Time Tracker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Employee Time Tracker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="DataProvider" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -309,7 +314,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544554233609" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544605237789" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Calculation" />
   </component>
   <component name="RunDashboard">
@@ -330,7 +335,7 @@
       <module name="Emloyee Time Tracker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="DataProvider.*" />
+          <option name="PATTERN" value="Attendance.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -379,10 +384,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1874" height="1096" extended-state="7" />
+    <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.044101432" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19625138" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -391,7 +396,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30218068" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22533749" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33333334" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -495,7 +500,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DataProvider/UserEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
+        <state relative-caret-position="368">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -505,8 +510,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DataProvider/Gates.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="314">
+          <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -515,18 +520,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DataProvider/EventData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="414">
+          <caret line="21" column="81" selection-start-line="21" selection-start-column="81" selection-end-line="21" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DataProvider/AttendanceChecker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Attendance/AttendanceChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+        <state relative-caret-position="198">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

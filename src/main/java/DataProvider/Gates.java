@@ -1,10 +1,8 @@
 package DataProvider;
 
-import java.awt.*;
+import Attendance.AttendanceChecker;
+
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Gates extends  EventData {
 
@@ -27,9 +25,9 @@ public class Gates extends  EventData {
 
 
 
-        //Check attendance
-        LocalDateTime shiftStart = LocalDateTime.of(2018, 12, 11, 9, 0, 0);
-        LocalDateTime shiftEnd = LocalDateTime.of(2018, 12, 11, 17, 0, 0);
+        //Check attendance. Shift fm 9:00 to 17:00
+        LocalDateTime shiftStart = LocalDateTime.of(2018, 12, 12, 9, 00, 0);
+        LocalDateTime shiftEnd = LocalDateTime.of(2018, 12, 12, 12, 00, 0);
 
 
         EventData da = new EventData();
