@@ -11,12 +11,12 @@ public class UserLib {
 
     {
 
-        users.add(new User("Jonas", "Petrauskas", "0001"));
-        users.add(new User("Petras", "Naujalis", "0002"));
-        users.add(new User("Klementina", "Lasauskiene", "0003"));
-        users.add(new User("Elze", "Jankauskaite", "0004"));
-        users.add(new User("Saule", "Uzun", "0005"));
-        users.add(new User("Haris", "Poteris", "0006"));
+        users.add(new User("Peter", "Parker", "0001"));
+        users.add(new User("Black", "Widow", "0002"));
+        users.add(new User("Stephen", "Strange", "0003"));
+        users.add(new User("Nick", "Fury", "0004"));
+        users.add(new User("Carrol", "Danvers", "0005"));
+        users.add(new User("Harry", "Potter", "0006"));
         users.add(new User("Steve", "Rodgers", "0007"));
 
     }

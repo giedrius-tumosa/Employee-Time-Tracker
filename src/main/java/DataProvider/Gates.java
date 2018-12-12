@@ -27,7 +27,7 @@ public class Gates extends  EventData {
 
         //Check attendance. Shift fm 9:00 to 17:00
         LocalDateTime shiftStart = LocalDateTime.of(2018, 12, 12, 9, 00, 0);
-        LocalDateTime shiftEnd = LocalDateTime.of(2018, 12, 12, 12, 00, 0);
+        LocalDateTime shiftEnd = LocalDateTime.of(2018, 12, 12, 17, 00, 0);
 
     EventData da = new EventData();
 
