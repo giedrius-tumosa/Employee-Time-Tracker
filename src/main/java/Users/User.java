@@ -1,4 +1,4 @@
-package DataProvider;
+package Users;
 
 
 public class User {

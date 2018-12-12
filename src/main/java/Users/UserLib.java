@@ -1,10 +1,9 @@
-package DataProvider;
+package Users;
 
-import DataProvider.User;
+import Users.User;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class UserLib {
 
@@ -22,13 +21,13 @@ public class UserLib {
 
     }
 
-    public static User search(String userID, List<User> users) {
-        for (User user : users) {
-            if (user.getUserId().equals(userID)) {
-                return user;
+    public  User search(String userID, List<User> users) {
+            for (User user : users) {
+                if (user.getUserId().equals(userID)) {
+                    return user;
+                }
             }
-        }
-        return null;
+            return null;
     }
 
     public List<User> users () {

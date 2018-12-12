@@ -29,11 +29,10 @@ public class Gates extends  EventData {
         LocalDateTime shiftStart = LocalDateTime.of(2018, 12, 12, 9, 00, 0);
         LocalDateTime shiftEnd = LocalDateTime.of(2018, 12, 12, 12, 00, 0);
 
+    EventData da = new EventData();
 
-        EventData da = new EventData();
-
-        AttendanceChecker j = new AttendanceChecker();
-        j.attendance( da.createEvent(), shiftStart, shiftEnd);
+    AttendanceChecker j = new AttendanceChecker();
+    j.attendance(da.createEvent(), shiftStart, shiftEnd);
 
     }
 
