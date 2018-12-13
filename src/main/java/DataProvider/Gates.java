@@ -15,7 +15,9 @@ public class Gates extends  EventData {
     EventData event = new EventData();
 
     AttendanceChecker checker = new AttendanceChecker();
-    checker.attendance(event.createEvent(), shiftStart, shiftEnd);
+    String reiksme = checker.attendance(event.createEvent(), shiftStart, shiftEnd).entrySet().toString();
+
+    System.out.println(reiksme);
 
     }
 
