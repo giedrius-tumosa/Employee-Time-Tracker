@@ -40,9 +40,10 @@ public class AttendanceChecker {
 
            System.out.print(entry.getKey());
            System.out.print(" " + userName + " " + userSurname);
+
            whereIsUser(personsLastLog, shiftStart, shiftEnd,isEvenNumber, timeOfReview);
            ifLogOnTime( isEvenNumber,  personsLastLog,  shiftStart);
-           forgotToLogOut(durAtWork, shiftLength, isEvenNumber);
+           ifLoggedOut(durAtWork, shiftLength, isEvenNumber);
 
            System.out.println(" ");
 
@@ -50,6 +51,7 @@ public class AttendanceChecker {
 
     }
 
+    //perdaryta logika i metodus
 
     public static void whereIsUser(LocalDateTime personsLastLog, LocalDateTime shiftStart, LocalDateTime shiftEnd, boolean isEvenNumber, LocalDateTime timeOfReview ) {
 
@@ -58,9 +60,9 @@ public class AttendanceChecker {
         boolean willStartWork = personsLastLog.isBefore(timeOfReview) && timeOfReview.isBefore(shiftStart) && isEvenNumber;
         boolean leftWorkLate = timeOfReview.isAfter(personsLastLog) && personsLastLog.isAfter(shiftEnd) && timeOfReview.isAfter(shiftEnd) && isEvenNumber;
 
-        if (!isEvenNumber) System.out.print(" At work.");
+        if (!isEvenNumber) System.out.print(". At work.");
         if (isEvenNumber) {
-            System.out.print(" Not at work.");
+            System.out.print(". Not at work.");
 
             if (isLate) System.out.print(" Late.");
             if (leftEarly) System.out.print(" Left work early.");
@@ -71,24 +73,50 @@ public class AttendanceChecker {
     }
 
 
-    public static void forgotToLogOut(Duration durAtWork, int shiftLength, boolean isEvenNumber) {
+    public static void ifLoggedOut(Duration durAtWork, int shiftLength, boolean isEvenNumber) {
 
-        if (durAtWork.toMinutes() > shiftLength && !isEvenNumber) {
+        boolean forgotToLogOut = durAtWork.toMinutes() > shiftLength && !isEvenNumber;
+
+        if (forgotToLogOut) {
             System.out.print(" Forgot to log out.");
+            System.out.print(" Time at work: " + durationString(durAtWork));
         }
 
     }
 
+
     public static void ifLogOnTime(boolean isEvenNumber, LocalDateTime personsLastLog, LocalDateTime shiftStart) {
 
-        if (personsLastLog.isAfter(shiftStart) && !isEvenNumber) System.out.print(" Logged in late.");
-        if (personsLastLog.isEqual(shiftStart) && !isEvenNumber) System.out.print(" Logged on time.");
-        if (personsLastLog.isBefore(shiftStart) && !isEvenNumber) System.out.print(" Logged in early.");
+        boolean loggedInLate = personsLastLog.isAfter(shiftStart) && !isEvenNumber;
+        boolean loggedOnTime = personsLastLog.isEqual(shiftStart) && !isEvenNumber;
+        boolean loggedInEarly = personsLastLog.isBefore(shiftStart) && !isEvenNumber;
+
+        if (loggedInLate) System.out.print(" Logged in late.");
+        if (loggedOnTime) System.out.print(" Logged on time.");
+        if (loggedInEarly) System.out.print(" Logged in early.");
 
     }
 
+    public static String durationString(Duration duration){
+
+        long durationHours = duration.toHours();
+        long durationMinutes = duration.toMinutes() - duration.toHours()*60;
+        long durationSeconds = duration.getSeconds() - duration.toMinutes()*60;
+
+        return " " + durationHours + " h " + durationMinutes +" min " + durationSeconds + " s ";
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
 //   SENA LOGIKA:
 //            if (isEvenNumber) { // user is logged out
 //
