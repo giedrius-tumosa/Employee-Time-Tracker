@@ -10,6 +10,9 @@ import java.util.Map;
 
 public class AttendanceChecker {
 
+    public enum UserStatus { AT_WORK, NOT_AT_WORK, LATE, LEFT_EARLY, NOT_SHIFT, LEFT_LATE, FORGOT, NOT_FORGOT, LOG_LATE, LOG_ON_TIME, LOG_EARLY }
+
+    UserStatus status = null;
     int userEventAmount = 0;
     boolean isEvenNumber = false;
     int shiftLength = 480; //shift duration in min
@@ -33,15 +36,15 @@ public class AttendanceChecker {
             Duration durAtWork = Duration.between(personsLastLog, timeOfReview);
 
 
-            UserLib k = new UserLib();
-            String userName = k.search(entry.getKey(), new UserLib().users()).getName();
-            String userSurname = k.search(entry.getKey(), new UserLib().users()).getSurname();
+            UserLib userData = new UserLib();
+            String userName = userData.search(entry.getKey(), new UserLib().users()).getName();
+            String userSurname = userData.search(entry.getKey(), new UserLib().users()).getSurname();
 
 
            System.out.print(entry.getKey());
            System.out.print(" " + userName + " " + userSurname);
 
-           whereIsUser(personsLastLog, shiftStart, shiftEnd,isEvenNumber, timeOfReview);
+           ifAtWork(personsLastLog, shiftStart, shiftEnd,isEvenNumber, timeOfReview);
            ifLogOnTime( isEvenNumber,  personsLastLog,  shiftStart);
            ifLoggedOut(durAtWork, shiftLength, isEvenNumber);
 
@@ -53,51 +56,67 @@ public class AttendanceChecker {
 
     //perdaryta logika i metodus
 
-    public static void whereIsUser(LocalDateTime personsLastLog, LocalDateTime shiftStart, LocalDateTime shiftEnd, boolean isEvenNumber, LocalDateTime timeOfReview ) {
+    UserStatus ifAtWork(LocalDateTime personsLastLog, LocalDateTime shiftStart, LocalDateTime shiftEnd, boolean isEvenNumber, LocalDateTime timeOfReview ) {
 
         boolean isLate = personsLastLog.isBefore(shiftStart) && timeOfReview.isAfter(shiftStart) && isEvenNumber;
         boolean leftEarly = timeOfReview.isAfter(personsLastLog) && personsLastLog.isAfter(shiftStart) && personsLastLog.isBefore(shiftEnd) || personsLastLog.isEqual(shiftStart) && isEvenNumber;
         boolean willStartWork = personsLastLog.isBefore(timeOfReview) && timeOfReview.isBefore(shiftStart) && isEvenNumber;
         boolean leftWorkLate = timeOfReview.isAfter(personsLastLog) && personsLastLog.isAfter(shiftEnd) && timeOfReview.isAfter(shiftEnd) && isEvenNumber;
 
-        if (!isEvenNumber) System.out.print(". At work.");
-        if (isEvenNumber) {
-            System.out.print(". Not at work.");
+        UserStatus statusIfAtWork = null;
 
-            if (isLate) System.out.print(" Late.");
-            if (leftEarly) System.out.print(" Left work early.");
-            if (willStartWork) System.out.print(" Shift not started.");
-            if (leftWorkLate) System.out.print(" Left work late.");
-        }
+        if (!isEvenNumber) statusIfAtWork = UserStatus.AT_WORK;
+        if (isEvenNumber)  statusIfAtWork = UserStatus.NOT_AT_WORK;
 
+        return statusIfAtWork;
+    }
+
+     UserStatus whereIsUser(LocalDateTime personsLastLog, LocalDateTime shiftStart, LocalDateTime shiftEnd, boolean isEvenNumber, LocalDateTime timeOfReview ){
+
+        boolean isLate = personsLastLog.isBefore(shiftStart) && timeOfReview.isAfter(shiftStart) && isEvenNumber;
+        boolean leftEarly = timeOfReview.isAfter(personsLastLog) && personsLastLog.isAfter(shiftStart) && personsLastLog.isBefore(shiftEnd) || personsLastLog.isEqual(shiftStart) && isEvenNumber;
+        boolean willStartWork = personsLastLog.isBefore(timeOfReview) && timeOfReview.isBefore(shiftStart) && isEvenNumber;
+        boolean leftWorkLate = timeOfReview.isAfter(personsLastLog) && personsLastLog.isAfter(shiftEnd) && timeOfReview.isAfter(shiftEnd) && isEvenNumber;
+
+        UserStatus statusWhereIsUser = null;
+
+        if (isLate)         statusWhereIsUser = UserStatus.LATE;
+        if (leftEarly)      statusWhereIsUser = UserStatus.LEFT_EARLY;
+        if (willStartWork)  statusWhereIsUser = UserStatus.NOT_SHIFT;
+        if (leftWorkLate)   statusWhereIsUser = UserStatus.LEFT_LATE;
+
+        return statusWhereIsUser;
     }
 
 
-    public static void ifLoggedOut(Duration durAtWork, int shiftLength, boolean isEvenNumber) {
+    UserStatus ifLoggedOut(Duration durAtWork, int shiftLength, boolean isEvenNumber) {
 
         boolean forgotToLogOut = durAtWork.toMinutes() > shiftLength && !isEvenNumber;
+        UserStatus statusIfForgot = null;
 
-        if (forgotToLogOut) {
-            System.out.print(" Forgot to log out.");
-            System.out.print(" Time at work: " + durationString(durAtWork));
-        }
+        if (forgotToLogOut)  statusIfForgot = UserStatus.FORGOT;
+        if (!forgotToLogOut) statusIfForgot = UserStatus.NOT_FORGOT;
 
+        return statusIfForgot;
     }
 
 
-    public static void ifLogOnTime(boolean isEvenNumber, LocalDateTime personsLastLog, LocalDateTime shiftStart) {
+    UserStatus ifLogOnTime(boolean isEvenNumber, LocalDateTime personsLastLog, LocalDateTime shiftStart) {
 
         boolean loggedInLate = personsLastLog.isAfter(shiftStart) && !isEvenNumber;
         boolean loggedOnTime = personsLastLog.isEqual(shiftStart) && !isEvenNumber;
         boolean loggedInEarly = personsLastLog.isBefore(shiftStart) && !isEvenNumber;
+        UserStatus statusIfOnTime = null;
 
-        if (loggedInLate) System.out.print(" Logged in late.");
-        if (loggedOnTime) System.out.print(" Logged on time.");
-        if (loggedInEarly) System.out.print(" Logged in early.");
 
+        if (loggedInLate)       statusIfOnTime = UserStatus.LOG_LATE;
+        if (loggedOnTime)       statusIfOnTime = UserStatus.LOG_ON_TIME;
+        if (loggedInEarly)      statusIfOnTime = UserStatus.LOG_EARLY;
+
+        return statusIfOnTime;
     }
 
-    public static String durationString(Duration duration){
+    String durationString(Duration duration){
 
         long durationHours = duration.toHours();
         long durationMinutes = duration.toMinutes() - duration.toHours()*60;
